@@ -11,9 +11,20 @@ import java.util.UUID;
 public class Crime {
     private UUID mId;
     private String mTitle;
+    private String mSuspect;
     private Date mDate;
     private boolean mSolved;
-   // SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+    private String mSuspectId;
+    private long mContactId;
+
+    public long getContactId() {
+        return mContactId;
+    }
+
+    public void setContactId(long contactId) {
+        mContactId = contactId;
+    }
+    // SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
     public Crime(){
         this(UUID.randomUUID());
@@ -39,6 +50,23 @@ public class Crime {
         mSolved = solved;
     }
 
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public String getSuspectId() {
+        return mSuspectId;
+    }
+
+    public void setSuspectId(String suspectId) {
+
+        mSuspectId = suspectId;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
+    }
+
     public Date getDate() {
         //String S = sdf.format(mDate);
         return mDate;
@@ -52,6 +80,9 @@ public class Crime {
 
         return mId;
 
+    }
+    public String getPhotoFilename(){
+        return "IMG_"+getId().toString()+".jpg";
     }
 
 
